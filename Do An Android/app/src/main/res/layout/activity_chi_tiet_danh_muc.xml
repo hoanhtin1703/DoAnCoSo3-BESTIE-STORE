@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#DEE7EF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChiTietDanhMucActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_Chitietdanhmuc"
+        app:title=" "
+        app:navigationIcon="@drawable/ic_back_button"
+        app:titleTextColor="#FAF8F2"
+        android:background="@color/background_cost_color"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <FrameLayout
+            android:layout_gravity="end"
+            android:layout_marginRight="@dimen/margin_1_2"
+            android:layout_width="@dimen/wrap_cart_width"
+            android:layout_height="?attr/actionBarSize">
+            <FrameLayout
+                android:onClick="openCart"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/miniCart"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_cart" />
+                <androidx.cardview.widget.CardView
+                    android:elevation="@dimen/margin_1"
+                    android:layout_gravity="top|left"
+                    app:cardCornerRadius="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="22dp"
+                    android:background="@color/cost_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+<com.nex3z.notificationbadge.NotificationBadge
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:id="@+id/thongbao_soluong">
+
+</com.nex3z.notificationbadge.NotificationBadge>
+
+
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <FrameLayout
+        android:layout_marginTop="@dimen/margin_1_2"
+        android:layout_marginBottom="@dimen/margin_1_2"
+        android:background="@color/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:onClick="ToHome"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_gravity="center"
+                android:src="@drawable/bestie1"
+                android:layout_marginRight="@dimen/margin_1_2"
+                android:layout_width="@dimen/item_logo_top_size"
+                android:layout_height="@dimen/item_logo_top_size"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/padding_text"
+                android:paddingRight="@dimen/padding_1"
+                android:fontFamily="@font/dancing_script_medium"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frame_giohangtrong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/recycleView_Giohang"
+        android:layout_alignParentTop="true"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/empty_cart"/>
+        <TextView
+            android:id="@+id/message_order"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_1"
+            android:text="@string/empty_cart"
+            android:textColor="@color/second"
+            android:textSize="@dimen/text_size_title"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/btn_tieptucmua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center|bottom"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_marginTop="@dimen/margin_1_2"
+            android:layout_marginRight="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/padding_1"
+            android:background="@drawable/custom_button_transparent"
+            android:onClick="muasam"
+            android:paddingTop="@dimen/padding_text_size_butoon_transparent"
+            android:paddingBottom="@dimen/padding_text_size_butoon_transparent"
+            android:text=" "
+
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/text_size_button_transparent" />
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView_ChiTietDanhMuc"
+        android:layout_margin="@dimen/margin_1_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
